@@ -1,6 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "../styles/StyledComponents";
 import { Stack, Typography } from "@mui/material";
+import { transform } from "next/dist/build/swc";
 
 const ChatItem = ({
   avatar = [],
@@ -12,10 +13,10 @@ const ChatItem = ({
   isOnline,
   newMessageAlert,
   index = 0,
-  handleDeleteChat,
+  handleDeleteChatOpen,
 }) => {
   return (
-    <Link to={`/chat/${_id}`}>
+    <Link to={`/chat/${_id}`} onContextMenu={(e) => handleDeleteChatOpen(e, _id, groupChat)}>
       <div
         style={{
           display: "flex",
@@ -34,9 +35,27 @@ const ChatItem = ({
             <Typography>{newMessageAlert.count} New Message</Typography>
           )}
         </Stack>
+
+        {/* isOnline */}
+        {isOnline && (
+          <Box
+            style={{
+              width: "1rem",
+              height: "1rem",
+              borderRadius: "50%",
+              backgroundColor: "green",
+              position: "absolute",
+              top: "0",
+              right: "0",
+              transform: "translate(50%, -50%)",
+            }}
+          />
+        )}
+
+        {/* groupChat */}
       </div>
     </Link>
   );
 };
 
-export default ChatItem;
+export default memo(ChatItem);
