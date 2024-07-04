@@ -19,12 +19,13 @@ const ChatList = ({
     <Stack width={w} direction={"column"}>
       {chats?.map((data, index) => {
         const { avatar, _id, name, groupChat, members } = data;
-        const newMessageAlert = newMessagesAlert.find(({ alert }) => alert.chatId === _id)
-        const isOnline = members.some((member) => onlineUsers.includes(_id))
+        // const newMessageAlert = newMessagesAlert.find(({ alert }) => alert.chatId === _id)
+        // const isOnline = members.some((member) => onlineUsers.includes(_id))
         return (
           <ChatItem
-            newMessageAlert={newMessageAlert}
-            isOnline={isOnline} avatar={avatar}
+            newMessageAlert={false}
+            isOnline={false}
+            avatar={avatar}
             name={name}
             _id={_id}
             key={_id}
