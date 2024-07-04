@@ -1,7 +1,6 @@
 import React, { memo } from "react";
 import { Link } from "../styles/StyledComponents";
 import { Stack, Typography } from "@mui/material";
-import { transform } from "next/dist/build/swc";
 
 const ChatItem = ({
   avatar = [],
