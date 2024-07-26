@@ -5,7 +5,7 @@ import ProtectRoute from "./components/auth/ProtectRoute";
 import Loader from "./components/layout/Loader";
 
 const Home = lazy(() => import("./pages/Home"));
-const Signin = lazy(() => import("./pages/Signin"));
+const Login = lazy(() => import("./pages/Login"));
 const Chat = lazy(() => import("./pages/Chat"));
 const Groups = lazy(() => import("./pages/Groups"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -19,14 +19,14 @@ const App = () => {
         <Routes>
           <Route element={<ProtectRoute user={user} />}>
             <Route path="/" element={<Home />} />
-            <Route path="chat/:chatId" element={<Chat />} />
-            <Route path="groups" element={<Groups />} />
+            <Route path="/chat/:chatId" element={<Chat />} />
+            <Route path="/groups" element={<Groups />} />
           </Route>
           <Route
-            path="login"
+            path="/login"
             element={
               <ProtectRoute user={!user} redirect="/">
-                <Signin />
+                <Login />
               </ProtectRoute>
             }
           />

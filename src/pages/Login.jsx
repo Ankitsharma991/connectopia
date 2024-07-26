@@ -243,4 +243,4 @@ const Login = () => {
   );
 };
 
-export default AppLayout()(Login);
+export default Login;
