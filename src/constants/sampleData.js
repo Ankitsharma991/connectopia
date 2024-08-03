@@ -1,8 +1,9 @@
 export const sampleChats = [
+
   {
     avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
     name: "John Doe",
-    _id: "1",
+    _id: "13",
     groupChat: false,
     sameSender: false,
     isOnline: true,
@@ -14,7 +15,7 @@ export const sampleChats = [
   {
     avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
     name: "Selmon bhoi",
-    _id: "2",
+    _id: "14",
     groupChat: true,
     sameSender: false,
     isOnline: true,
